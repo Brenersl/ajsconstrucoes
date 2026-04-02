@@ -40,7 +40,7 @@ export default function Hero() {
               isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
             }`}
           >
-            Há mais de 30 anos entregando soluções de infraestrutura com excelência e compromisso.
+            Entregando soluções com excelência e compromisso
           </p>
 
           <div

@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="w-20 h-1 bg-accent mb-8" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
               Soluções integradas em{" "}
-              <span className="text-accent">engenharia</span>, construção e gestão ambiental
+              <span className="text-accent">engenharia</span>, construção civil e limpeza urbana
             </h1>
           </div>
 

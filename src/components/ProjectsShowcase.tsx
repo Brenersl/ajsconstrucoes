@@ -1,56 +1,17 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { MapPin } from "lucide-react";
-
-const projectList = [
-  "Ala de Contenção - Estrela do Norte SP",
-  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI Usiminas - Ipatinga MG",
-  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI - FLM São Simão GO",
-  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI - ANX Paulínia SP",
-  "Reforma, Revitalização Geral, Adequações Legais Fábrica de Vagões – ANX Paulínia SP",
-  "Licenciamento Ambiental – ANX Paulínia SP",
-  "Espaço de Saúde - Estrela do Norte SP",
-  "Coleta Resíduos Sólidos Urbanos - Santa Helena de Goiás GO",
-  "Centro de Convivência - Euclides da Cunha Paulista SP",
-  "Pista de Caminhada - Estrela do Norte SP",
-  "Centro de Convivência - Tarabai SP",
-  "Espaço de Saúde - Presidente Venceslau SP",
-  "Espaço de Saúde - Piquerobi SP",
-  "Salas de Aula - Estrela do Norte SP",
-  "Poste de Led - Estrela do Norte SP",
-  "Pista de Caminhada e Calçada - Presidente Venceslau SP",
-  "Reforma Recinto - Sandovalina SP",
-  "Reforma Escola - Sandovalina SP",
-  "Ala de Contenção e Passarela - Sandovalina SP",
-  "Reforma Praça - Presidente Venceslau SP",
-  "Terraplanagem, Curvas de Nivel, Preparo de Solo e Reforma de Pasto - Estrela do Norte SP",
-  "Construções de Estrutura Manejo Agropecuário - Estrela do Norte SP",
-  "Plantio de Arvores, Reflorestamento - Estrela do Norte SP",
-  "Reforma Pré Escola - Tarabai SP",
-  "Construção Barracão Industrial - Lupionópolis PR",
-  "Espaço de Saúde - Sandovalina SP",
-  "Reforma de Casa – Sandovalina SP",
-  "Reforma CCI Bom Pastor - Sandovalina SP",
-  "Reforma UPA - Paranavaí PR",
-  "Reforma Canteiro Central - Sandovalina SP",
-  "Casa da Moeda - Presidente Epitácio SP",
-  "Reforma de Casa – Presidente Prudente SP",
-  "Revitalização De Área Esportes E Lazer - Mirante do Paranapanema SP",
-  "Construção Ciclovia - Ana Rosa Cambé PR",
-  "Reforma de Casa - Primavera SP",
-  "Revitalização de Avenida - Terra Roxa PR",
-  "Construção de Casa Sobrado - Rosana SP",
-  "Coleta Resíduos Sólidos Urbanos - Presidente Epitácio SP",
-  "Locações de Caminhões Compactadores de Lixo - Alumínio SP",
-];
+import { projects } from "@/data/projects";
 
 export default function ProjectsShowcase() {
   const { ref, isVisible } = useScrollAnimation();
+  const featured = projects.slice(0, 4);
 
   return (
     <section id="projetos" ref={ref} className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className={`mb-12 transition-all duration-700 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div className={`mb-16 transition-all duration-700 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-0.5 bg-accent" />
             <span className="text-sm font-heading font-semibold text-accent uppercase tracking-widest">Projetos</span>
@@ -60,33 +21,48 @@ export default function ProjectsShowcase() {
           </h2>
         </div>
 
-        {/* Project List */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 transition-all duration-700 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          {projectList.map((project, i) => {
-            const parts = project.split(" - ");
-            const name = parts[0];
-            const location = parts[1] || "";
-
-            return (
-              <div
-                key={i}
-                className="flex items-start gap-3 py-4 border-b border-border/50 group"
-              >
-                <div className="mt-1.5 w-2 h-2 rounded-full bg-accent shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <span className="text-sm md:text-base font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {name}
-                  </span>
-                  {location && (
-                    <span className="flex items-center gap-1 mt-0.5 text-xs text-muted-foreground font-body">
-                      <MapPin className="w-3 h-3" />
-                      {location}
-                    </span>
-                  )}
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {featured.map((project, i) => (
+            <Link
+              key={project.slug}
+              to={`/projetos/${project.slug}`}
+              className={`group relative overflow-hidden rounded-lg aspect-[4/3] transition-all duration-700 ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${i * 0.15}s` }}
+            >
+              <img
+                src={project.cover}
+                alt={project.name}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <span className="inline-block px-3 py-1 text-xs font-heading font-semibold text-accent bg-accent/10 border border-accent/20 rounded uppercase tracking-wider mb-3">
+                  {project.category}
+                </span>
+                <h3 className="text-xl lg:text-2xl font-heading font-bold text-primary-foreground group-hover:text-accent transition-colors">
+                  {project.name}
+                </h3>
+                <div className="mt-3 flex items-center gap-2 text-primary-foreground/60 group-hover:text-accent transition-colors text-sm font-body">
+                  <span>Ver detalhes</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-            );
-          })}
+            </Link>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className={`mt-12 text-center transition-all duration-700 delay-500 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <Link
+            to="/projetos"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading font-bold text-sm rounded hover:bg-primary/90 transition-all uppercase tracking-wide group"
+          >
+            Ver mais projetos
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

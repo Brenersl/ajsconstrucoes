@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="w-20 h-1 bg-accent mb-8" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
               Soluções integradas em{" "}
-              <span className="text-accent">engenharia</span>, construção civil e limpeza urbana
+              <span className="text-accent">engenharia</span>, construção e gestão ambiental
             </h1>
           </div>
 
@@ -40,7 +40,7 @@ export default function Hero() {
               isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
             }`}
           >
-            Entregando soluções com excelência e compromisso
+            Há mais de 30 anos entregando soluções de infraestrutura com excelência e compromisso.
           </p>
 
           <div
@@ -67,6 +67,13 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary-foreground/50">
+        <span className="text-xs font-heading uppercase tracking-widest">Scroll</span>
+        <div className="w-px h-10 bg-primary-foreground/30 relative overflow-hidden">
+          <div className="absolute top-0 w-full h-1/2 bg-accent animate-bounce" />
+        </div>
+      </div>
     </section>
   );
 }

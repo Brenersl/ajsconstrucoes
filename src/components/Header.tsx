@@ -171,14 +171,8 @@ export default function Header() {
               )}
             </div>
           ))}
-          <a
-            href="https://wa.me/5518981560291?text=Olá, vim pelo site e gostaria de mais informações."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mx-4 mt-6 py-3 bg-accent text-accent-foreground font-heading font-bold text-center rounded uppercase"
-          >
-            Fale Conosco
-          </a>
+
+
         </nav>
       </div>
     </header>

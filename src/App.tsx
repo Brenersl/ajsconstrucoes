@@ -5,7 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import ProjectsPage from "./pages/ProjectsPage.tsx";
-
+import SobrePage from "./pages/SobrePage.tsx";
+import GestaoPage from "./pages/GestaoPage.tsx";
+import HoldingPage from "./pages/HoldingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -19,6 +21,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projetos" element={<ProjectsPage />} />
+          <Route path="/sobre" element={<SobrePage />} />
+          <Route path="/gestao" element={<GestaoPage />} />
+          <Route path="/holding" element={<HoldingPage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

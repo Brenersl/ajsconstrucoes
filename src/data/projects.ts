@@ -7,83 +7,89 @@ import projectBuilding from "@/assets/project-building.jpg";
 import projectEngineer from "@/assets/project-engineer.jpg";
 import projectExcavator from "@/assets/project-excavator.jpg";
 
-export interface Project {
+export interface FeaturedProject {
   slug: string;
   name: string;
   category: string;
-  type: string;
-  location: string;
-  status: string;
-  description: string;
   cover: string;
-  gallery: string[];
 }
 
-export const projects: Project[] = [
+export const featuredProjects: FeaturedProject[] = [
   {
     slug: "coleta-residuos-epitacio",
     name: "Coleta de Resíduos — Presidente Epitácio",
     category: "Limpeza Urbana",
-    type: "Coleta e Transporte de Resíduos Sólidos",
-    location: "Presidente Epitácio — SP",
-    status: "Em operação",
-    description: "Operação completa de coleta de resíduos sólidos urbanos no município de Presidente Epitácio, com frota moderna e equipe especializada, atendendo toda a área urbana e distritos.",
     cover: projectFleet,
-    gallery: [projectFleet, projectTruck],
   },
   {
     slug: "cobertura-piramidal",
     name: "Cobertura Piramidal — Estrutura Metálica",
     category: "Construção Civil",
-    type: "Estrutura Metálica e Cobertura",
-    location: "Interior de São Paulo",
-    status: "Concluído",
-    description: "Projeto e execução de cobertura piramidal em estrutura metálica com fechamento em telhas metálicas, demonstrando capacidade em obras de geometria complexa e acabamento de alto padrão.",
     cover: projectPyramid,
-    gallery: [projectPyramid, projectInterior],
   },
   {
     slug: "drenagem-infraestrutura",
     name: "Obras de Drenagem e Infraestrutura",
     category: "Infraestrutura",
-    type: "Drenagem e Terraplanagem",
-    location: "Região Oeste — SP",
-    status: "Concluído",
-    description: "Execução de obras de drenagem pluvial, instalação de tubulações de grande porte e terraplanagem, contribuindo para a infraestrutura viária e prevenção de enchentes na região.",
     cover: projectDrainage,
-    gallery: [projectDrainage, projectExcavator],
   },
   {
     slug: "edificacao-comercial",
     name: "Edificação Comercial e Industrial",
     category: "Construção Civil",
-    type: "Edificação Comercial",
-    location: "Interior de São Paulo",
-    status: "Concluído",
-    description: "Construção de edificação comercial e industrial com estrutura pré-moldada, cobertura metálica e acabamentos internos em granito, atendendo aos mais altos padrões de qualidade construtiva.",
     cover: projectBuilding,
-    gallery: [projectBuilding, projectInterior, projectEngineer],
   },
-  {
-    slug: "terraplanagem-escavacao",
-    name: "Terraplanagem e Escavação Mecanizada",
-    category: "Infraestrutura",
-    type: "Terraplanagem",
-    location: "Região Oeste — SP",
-    status: "Concluído",
-    description: "Serviços de terraplanagem e escavação mecanizada com equipamentos de grande porte, preparando terrenos para obras de infraestrutura e edificações de alto padrão.",
-    cover: projectExcavator,
-    gallery: [projectExcavator, projectDrainage],
-  },
-  {
-    slug: "frota-coleta-urbana",
-    name: "Gestão de Frota — Coleta Urbana",
-    category: "Limpeza Urbana",
-    type: "Gestão de Frota e Coleta",
-    location: "Diversos Municípios — SP",
-    status: "Em operação",
-    description: "Gestão e operação de frota completa de veículos coletores compactadores para serviços de limpeza urbana em múltiplos municípios do interior paulista.",
-    cover: projectTruck,
-    gallery: [projectTruck, projectFleet],
-  },
+];
+
+export const allProjects: string[] = [
+  "Ala de Contenção - Estrela do Norte SP",
+  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI Usiminas - Ipatinga MG",
+  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI - FLM São Simão GO",
+  "Gestão de Saúde, Segurança do Trabalho, Meio Ambiente e SGI - ANX Paulínia SP",
+  "Reforma, Revitalização Geral, Adequações Legais Fábrica de Vagões – ANX Paulínia SP",
+  "Licenciamento Ambiental – ANX Paulínia SP",
+  "Espaço de Saúde - Estrela do Norte SP",
+  "Coleta Resíduos Sólidos Urbanos - Santa Helena de Goiás GO",
+  "Centro de Convivência - Euclides da Cunha Paulista SP",
+  "Pista de Caminhada - Estrela do Norte SP",
+  "Centro de Convivência - Tarabai SP",
+  "Espaço de Saúde - Presidente Venceslau SP",
+  "Espaço de Saúde - Piquerobi SP",
+  "Salas de Aula - Estrela do Norte SP",
+  "Poste de Led - Estrela do Norte SP",
+  "Pista de Caminhada e Calçada - Presidente Venceslau SP",
+  "Reforma Recinto - Sandovalina SP",
+  "Reforma Escola - Sandovalina SP",
+  "Ala de Contenção e Passarela - Sandovalina SP",
+  "Reforma Praça - Presidente Venceslau SP",
+  "Terraplanagem, Curvas de Nivel, Preparo de Solo e Reforma de Pasto - Estrela do Norte SP",
+  "Construções de Estrutura Manejo Agropecuário - Estrela do Norte SP",
+  "Plantio de Arvores, Reflorestamento - Estrela do Norte SP",
+  "Reforma Pré Escola - Tarabai SP",
+  "Construção Barracão Industrial - Lupionópolis PR",
+  "Espaço de Saúde - Sandovalina SP",
+  "Reforma de Casa – Sandovalina SP",
+  "Reforma CCI Bom Pastor - Sandovalina SP",
+  "Reforma UPA - Paranavaí PR",
+  "Reforma Canteiro Central - Sandovalina SP",
+  "Casa da Moeda - Presidente Epitácio SP",
+  "Reforma de Casa – Presidente Prudente SP",
+  "Revitalização De Área Esportes E Lazer - Mirante do Paranapanema SP",
+  "Construção Ciclovia - Ana Rosa Cambé PR",
+  "Reforma de Casa - Primavera SP",
+  "Revitalização de Avenida - Terra Roxa PR",
+  "Construção de Casa Sobrado - Rosana SP",
+  "Coleta Resíduos Sólidos Urbanos - Presidente Epitácio SP",
+  "Locações de Caminhões Compactadores de Lixo - Alumínio SP",
+];
+
+export const galleryImages: string[] = [
+  projectFleet,
+  projectTruck,
+  projectPyramid,
+  projectInterior,
+  projectDrainage,
+  projectBuilding,
+  projectEngineer,
+  projectExcavator,
 ];

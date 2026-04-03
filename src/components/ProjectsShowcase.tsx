@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { projects } from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 
 export default function ProjectsShowcase() {
   const { ref, isVisible } = useScrollAnimation();
-  const featured = projects.slice(0, 4);
 
   return (
     <section id="projetos" ref={ref} className="py-24 lg:py-32 bg-background">
@@ -23,10 +22,9 @@ export default function ProjectsShowcase() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {featured.map((project, i) => (
-            <Link
+          {featuredProjects.map((project, i) => (
+            <div
               key={project.slug}
-              to={`/projetos/${project.slug}`}
               className={`group relative overflow-hidden rounded-lg aspect-[4/3] transition-all duration-700 ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
@@ -45,12 +43,8 @@ export default function ProjectsShowcase() {
                 <h3 className="text-xl lg:text-2xl font-heading font-bold text-primary-foreground group-hover:text-accent transition-colors">
                   {project.name}
                 </h3>
-                <div className="mt-3 flex items-center gap-2 text-primary-foreground/60 group-hover:text-accent transition-colors text-sm font-body">
-                  <span>Ver detalhes</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 

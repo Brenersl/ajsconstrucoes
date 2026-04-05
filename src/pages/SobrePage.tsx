@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Target, Eye, Award, ShieldCheck, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { Target, Eye, Award, ShieldCheck, Users, TrendingUp, ArrowRight, HardHat, Truck, MonitorCog, BadgeCheck } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import projectFleet from "@/assets/project-fleet.png";
 import projectEngineer from "@/assets/project-engineer.jpg";

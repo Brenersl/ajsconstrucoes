@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Building2, Trash2, Users, Leaf, CheckCircle, ArrowRight } from "lucide-react";
+import { Building2, Trash2, Users, Leaf, CheckCircle, ArrowRight, MapPin } from "lucide-react";
 import projectBuilding from "@/assets/project-building.jpg";
 import projectExcavator from "@/assets/project-excavator.jpg";
 import projectFleet from "@/assets/project-fleet.png";
@@ -36,6 +36,22 @@ const solucoes = [
       "Destinação e transporte de resíduos",
       "Locação de caminhões compactadores",
     ],
+    operacao: {
+      locais: "Santa Helena de Goiás/GO e Presidente Epitácio/SP",
+      stats: [
+        { value: "2.930,57 t", label: "Média mensal coletada de Resíduos" },
+        { value: "35.166,84 t", label: "Resíduos gerenciados/ano" },
+        { value: "15 m³", label: "Capacidade dos compactadores" },
+        { value: "100%", label: "Satisfação da população" },
+      ],
+      estrutura: [
+        "Motoristas qualificados",
+        "Garis coletores treinados",
+        "Supervisor operacional exclusivo",
+        "Canal de Comunicação direto a população",
+      ],
+      tecnologia: "Frota moderna com sistema de compactação de alto desempenho e rastreamento em tempo real.",
+    },
   },
   {
     icon: Users,
@@ -178,6 +194,53 @@ function SolucaoBlock({
             </ul>
           </div>
         </div>
+
+        {/* Operação extra block (Limpeza Urbana) */}
+        {"operacao" in sol && sol.operacao && (
+          <div className={`mt-16 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div className="bg-background border border-border rounded-xl p-8 lg:p-10 shadow-lg">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-sm font-heading font-semibold text-accent uppercase tracking-widest">Operação Continuada</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">
+                Operação de Limpeza Urbana
+              </h3>
+              <div className="flex items-center gap-2 text-muted-foreground font-body mb-8">
+                <MapPin className="w-4 h-4 text-accent" />
+                {sol.operacao.locais}
+              </div>
+
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {sol.operacao.stats.map((stat) => (
+                  <div key={stat.label} className="bg-muted rounded-lg p-5">
+                    <span className="text-2xl md:text-3xl font-heading font-bold text-accent">{stat.value}</span>
+                    <p className="text-sm text-muted-foreground font-body mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Estrutura Dedicada */}
+              <div className="bg-muted rounded-lg p-6">
+                <h4 className="text-lg font-heading font-bold text-foreground uppercase tracking-wide mb-4">Estrutura Dedicada</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {sol.operacao.estrutura.map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
+                      <span className="text-foreground font-body text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tecnologia */}
+              <div className="mt-6 bg-secondary rounded-lg p-5">
+                <h4 className="text-sm font-heading font-bold text-primary-foreground uppercase tracking-wide mb-2">Tecnologia Operacional</h4>
+                <p className="text-primary-foreground/70 font-body text-sm">{sol.operacao.tecnologia}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

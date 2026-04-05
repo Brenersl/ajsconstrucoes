@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Phone } from "lucide-react";
+import { Instagram, Phone, Mail } from "lucide-react";
 import logoAjs from "@/assets/logo-ajs.png";
 
 export default function Footer() {
@@ -45,6 +45,9 @@ export default function Footer() {
               </a>
               <a href="https://www.instagram.com/ajs.construcoesecomercio/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/60 hover:text-accent text-sm font-body transition-colors">
                 <Instagram className="w-4 h-4" /> @ajs.construcoesecomercio
+              </a>
+              <a href="mailto:ajs.gerenciamento@gmail.com" className="flex items-center gap-2 text-primary-foreground/60 hover:text-accent text-sm font-body transition-colors">
+                <Mail className="w-4 h-4" /> ajs.gerenciamento@gmail.com
               </a>
             </div>
           </div>

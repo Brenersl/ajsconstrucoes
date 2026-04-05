@@ -59,7 +59,7 @@ export default function SobrePage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className={`max-w-4xl mx-auto transition-all duration-1000 ${vis1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <p className="text-xl md:text-2xl text-foreground font-body leading-relaxed mb-6">
-                A <strong className="font-heading font-bold">AJS Construções e Comércio</strong> é uma empresa especializada em projetos de engenharia, infraestrutura e gestão ambiental, com mais de <strong className="text-primary font-bold">30 anos de experiência</strong> no mercado.
+                A <strong className="font-heading font-bold">AJS Construções e Comércio</strong> é uma empresa especializada em projetos de engenharia, infraestrutura e gestão ambiental, com mais de <strong className="text-primary font-bold">10 anos de experiência</strong> no mercado.
               </p>
               <p className="text-lg text-muted-foreground font-body leading-relaxed mb-6">
                 Ao longo de sua trajetória, a AJS se consolidou como referência em soluções duráveis e de alta performance, investindo constantemente em modernidade, tecnologia e capacitação técnica. Atuamos em projetos de grande porte para órgãos públicos, indústrias e empresas privadas em diversas regiões do Brasil.

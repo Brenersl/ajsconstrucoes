@@ -70,13 +70,20 @@ export default function Header() {
                     {item.label}
                     <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
                   </button>
-                ) : item.href.startsWith("#") ? (
-                  <a
-                    href={item.href}
+                ) : item.href.includes("#") ? (
+                  <button
+                    onClick={() => {
+                      if (!isHome) {
+                        navigate("/");
+                        setTimeout(() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }), 300);
+                      } else {
+                        document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className="px-5 py-2 text-sm font-heading font-semibold tracking-wide text-primary-foreground/90 hover:text-accent transition-colors uppercase"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ) : (
                   <Link
                     to={item.href}

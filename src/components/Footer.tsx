@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Phone } from "lucide-react";
+import { Instagram, Phone, Mail } from "lucide-react";
 import logoAjs from "@/assets/logo-ajs.png";
 
 export default function Footer() {

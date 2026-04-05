@@ -32,6 +32,7 @@ export default function SobrePage() {
   const { ref: ref2, isVisible: vis2 } = useScrollAnimation();
   const { ref: ref3, isVisible: vis3 } = useScrollAnimation();
   const { ref: ref4, isVisible: vis4 } = useScrollAnimation();
+  const { ref: ref5, isVisible: vis5 } = useScrollAnimation();
 
   return (
     <>

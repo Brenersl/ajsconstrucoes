@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Building2, Trash2, Users, Leaf, CheckCircle, ArrowRight } from "lucide-react";
+import { Building2, Trash2, Users, Leaf, CheckCircle, ArrowRight, MapPin } from "lucide-react";
 import projectBuilding from "@/assets/project-building.jpg";
 import projectExcavator from "@/assets/project-excavator.jpg";
 import projectFleet from "@/assets/project-fleet.png";

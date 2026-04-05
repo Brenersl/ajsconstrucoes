@@ -44,15 +44,15 @@ export default function InstitutionalVisual() {
             </p>
             <div className="flex gap-8">
               <div>
-                <span className="text-4xl font-heading font-bold text-accent">30+</span>
+                <AnimatedCounter target={30} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Anos de mercado</p>
               </div>
               <div>
-                <span className="text-4xl font-heading font-bold text-accent">500+</span>
+                <AnimatedCounter target={500} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Projetos entregues</p>
               </div>
               <div>
-                <span className="text-4xl font-heading font-bold text-accent">50+</span>
+                <AnimatedCounter target={50} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Municípios atendidos</p>
               </div>
             </div>

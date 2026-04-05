@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, Mail } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logoAjs from "@/assets/logo-ajs.png";
 
 const menuItems = [

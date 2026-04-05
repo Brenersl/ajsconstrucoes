@@ -36,6 +36,22 @@ const solucoes = [
       "Destinação e transporte de resíduos",
       "Locação de caminhões compactadores",
     ],
+    operacao: {
+      locais: "Santa Helena de Goiás/GO e Presidente Epitácio/SP",
+      stats: [
+        { value: "2.930,57 t", label: "Média mensal coletada de Resíduos" },
+        { value: "35.166,84 t", label: "Resíduos gerenciados/ano" },
+        { value: "15 m³", label: "Capacidade dos compactadores" },
+        { value: "100%", label: "Satisfação da população" },
+      ],
+      estrutura: [
+        "Motoristas qualificados",
+        "Garis coletores treinados",
+        "Supervisor operacional exclusivo",
+        "Canal de Comunicação direto a população",
+      ],
+      tecnologia: "Frota moderna com sistema de compactação de alto desempenho e rastreamento em tempo real.",
+    },
   },
   {
     icon: Users,

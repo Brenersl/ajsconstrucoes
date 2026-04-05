@@ -21,7 +21,7 @@ const menuItems = [
     ],
   },
   { label: "Projetos", href: "/projetos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export default function Header() {

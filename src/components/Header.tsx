@@ -169,14 +169,21 @@ export default function Header() {
                     </div>
                   )}
                 </>
-              ) : item.href.startsWith("#") ? (
-                <a
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-primary-foreground font-heading font-semibold text-lg uppercase"
+              ) : item.href.includes("#") ? (
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    if (!isHome) {
+                      navigate("/");
+                      setTimeout(() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }), 300);
+                    } else {
+                      document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="block w-full text-left px-4 py-3 text-primary-foreground font-heading font-semibold text-lg uppercase"
                 >
                   {item.label}
-                </a>
+                </button>
               ) : (
                 <Link
                   to={item.href}

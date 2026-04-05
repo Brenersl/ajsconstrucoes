@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import projectFleet from "@/assets/project-fleet.png";
 import projectEngineer from "@/assets/project-engineer.jpg";
 import projectBuilding from "@/assets/project-building.jpg";

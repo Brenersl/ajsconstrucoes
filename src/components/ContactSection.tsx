@@ -66,6 +66,18 @@ export default function ContactSection() {
                   <p className="font-body">@ajs.construcoesecomercio</p>
                 </div>
               </a>
+              <a
+                href="mailto:ajs.gerenciamento@gmail.com"
+                className="flex items-center gap-4 text-primary-foreground/80 hover:text-accent transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Mail className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <span className="text-xs font-heading uppercase tracking-wider text-primary-foreground/50">E-mail</span>
+                  <p className="font-body">ajs.gerenciamento@gmail.com</p>
+                </div>
+              </a>
             </div>
           </div>
 

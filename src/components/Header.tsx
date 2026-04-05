@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, Mail } from "lucide-react";
 import logoAjs from "@/assets/logo-ajs.png";
 
 const menuItems = [
@@ -21,7 +21,7 @@ const menuItems = [
     ],
   },
   { label: "Projetos", href: "/projetos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export default function Header() {
@@ -29,6 +29,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   useEffect(() => {
@@ -69,13 +70,20 @@ export default function Header() {
                     {item.label}
                     <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
                   </button>
-                ) : item.href.startsWith("#") ? (
-                  <a
-                    href={item.href}
+                ) : item.href.includes("#") ? (
+                  <button
+                    onClick={() => {
+                      if (!isHome) {
+                        navigate("/");
+                        setTimeout(() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }), 300);
+                      } else {
+                        document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className="px-5 py-2 text-sm font-heading font-semibold tracking-wide text-primary-foreground/90 hover:text-accent transition-colors uppercase"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ) : (
                   <Link
                     to={item.href}
@@ -109,6 +117,14 @@ export default function Header() {
             ))}
 
 
+            {/* Email */}
+            <a
+              href="mailto:ajs.gerenciamento@gmail.com"
+              className="hidden xl:flex items-center gap-2 px-4 py-2 text-xs font-body text-primary-foreground/70 hover:text-accent transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              ajs.gerenciamento@gmail.com
+            </a>
           </nav>
 
           {/* Mobile Toggle */}
@@ -153,14 +169,21 @@ export default function Header() {
                     </div>
                   )}
                 </>
-              ) : item.href.startsWith("#") ? (
-                <a
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-primary-foreground font-heading font-semibold text-lg uppercase"
+              ) : item.href.includes("#") ? (
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    if (!isHome) {
+                      navigate("/");
+                      setTimeout(() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }), 300);
+                    } else {
+                      document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="block w-full text-left px-4 py-3 text-primary-foreground font-heading font-semibold text-lg uppercase"
                 >
                   {item.label}
-                </a>
+                </button>
               ) : (
                 <Link
                   to={item.href}

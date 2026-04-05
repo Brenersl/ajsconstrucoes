@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <img src={logoAjs} alt="AJS" className="h-12 w-auto brightness-0 invert mb-4" />
             <p className="text-primary-foreground/60 font-body text-sm leading-relaxed">
-              Soluções integradas em engenharia, construção e gestão ambiental há mais de 30 anos.
+              Soluções integradas em engenharia, construção civil e limpeza urbana.
             </p>
           </div>
 

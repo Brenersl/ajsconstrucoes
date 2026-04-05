@@ -10,7 +10,6 @@ const menuItems = [
     dropdown: [
       { label: "Sobre nós", href: "/sobre" },
       { label: "Sistema de Gestão Integrada", href: "/gestao" },
-      { label: "Turita Holding", href: "/holding" },
     ],
   },
   {

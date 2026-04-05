@@ -23,7 +23,6 @@ export default function InstitutionalVisual() {
               <div className="absolute -bottom-8 -right-4 lg:-right-8 w-48 lg:w-64 clip-slant-left overflow-hidden rounded-lg shadow-2xl border-4 border-background">
                 <img src={projectEngineer} alt="Engenheiro AJS" className="w-full h-36 lg:h-48 object-cover" />
               </div>
-              {/* Decorative */}
               <div className="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-accent opacity-60" />
             </div>
           </div>
@@ -44,15 +43,15 @@ export default function InstitutionalVisual() {
             </p>
             <div className="flex gap-8">
               <div>
-                <AnimatedCounter target={30} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
+                <AnimatedCounter target={10} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Anos de mercado</p>
               </div>
               <div>
-                <AnimatedCounter target={500} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
+                <AnimatedCounter target={50} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Projetos entregues</p>
               </div>
               <div>
-                <AnimatedCounter target={50} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
+                <AnimatedCounter target={20} isVisible={vis1} className="text-4xl font-heading font-bold text-accent" />
                 <p className="text-sm text-muted-foreground font-body mt-1">Municípios atendidos</p>
               </div>
             </div>
@@ -60,22 +59,42 @@ export default function InstitutionalVisual() {
         </div>
       </div>
 
-      {/* Block 2 */}
+      {/* Block 2 - Diferenciais */}
       <div ref={ref2} className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}
           <div className={`order-2 lg:order-1 transition-all duration-1000 ${vis2 ? "animate-fade-in-left" : "opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-0.5 bg-accent" />
-              <span className="text-sm font-heading font-semibold text-accent uppercase tracking-widest">Turita Holding</span>
+              <span className="text-sm font-heading font-semibold text-accent uppercase tracking-widest">
+                Diferenciais
+              </span>
             </div>
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight mb-6">
-              Fazemos parte da{" "}
-              <span className="text-primary">Turita Holding</span>
+              Por que escolher a <span className="text-primary">AJS</span>?
             </h2>
-            <p className="text-muted-foreground font-body text-lg leading-relaxed">
-              Unindo esforços com o objetivo de maximizar oportunidades e entregar resultados de alto impacto em diversos segmentos da engenharia e infraestrutura.
+
+            <p className="text-muted-foreground font-body text-lg leading-relaxed mb-8">
+              Atuamos com excelência em cada projeto, garantindo qualidade, segurança e resultados que superam expectativas.
             </p>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent mt-2 rounded-full" />
+                <p className="text-muted-foreground">Equipe altamente qualificada e experiente</p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent mt-2 rounded-full" />
+                <p className="text-muted-foreground">Compromisso com prazos e qualidade na entrega</p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-accent mt-2 rounded-full" />
+                <p className="text-muted-foreground">Soluções personalizadas para cada cliente</p>
+              </div>
+            </div>
           </div>
 
           {/* Images */}

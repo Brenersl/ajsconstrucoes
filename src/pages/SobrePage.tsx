@@ -99,10 +99,10 @@ export default function SobrePage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-all duration-1000 ${vis3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               {[
-                { target: 30, label: "Anos de mercado" },
-                { target: 500, label: "Projetos entregues" },
-                { target: 50, label: "Municípios atendidos" },
-                { target: 1000, label: "Colaboradores" },
+                { target: 10, label: "Anos de mercado" },
+                { target: 50, label: "Projetos entregues" },
+                { target: 20, label: "Municípios atendidos" },
+                { target: 100, label: "Colaboradores" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <AnimatedCounter target={stat.target} isVisible={vis3} className="text-4xl md:text-5xl font-heading font-bold text-accent-foreground" />

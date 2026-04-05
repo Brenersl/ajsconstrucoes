@@ -113,7 +113,63 @@ export default function SobrePage() {
           </div>
         </section>
 
-        {/* Diferenciais — alternating image+text like FBS */}
+        {/* Capacidade Operacional */}
+        <section ref={ref5} className="py-20 lg:py-28 bg-muted">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className={`mb-14 transition-all duration-1000 ${vis5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-1 h-10 bg-accent rounded-full" />
+                <div>
+                  <span className="text-sm font-heading font-semibold text-accent uppercase tracking-widest">Capacidade Operacional</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight">
+                    Estrutura para Executar Grandes Contratos
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-1000 delay-200 ${vis5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              {[
+                {
+                  icon: HardHat,
+                  title: "Equipe Técnica",
+                  description: "Engenheiros, técnicos de segurança, supervisores e operadores qualificados com treinamento contínuo.",
+                },
+                {
+                  icon: Truck,
+                  title: "Frota Própria",
+                  description: "Caminhões compactadores de lixo 15 m³, retroescavadeiras, escavadeiras e equipamentos de grande porte.",
+                },
+                {
+                  icon: MonitorCog,
+                  title: "Sistemas de Gestão",
+                  description: "Rastreamento de frota via satélite, controles ambientais e de qualidade rigorosos.",
+                },
+                {
+                  icon: BadgeCheck,
+                  title: "Compliance Total",
+                  description: "Regularidade técnica comprovada: ARTs, CREA, NRs, e licenças ambientais vigentes.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={item.title}
+                  className="bg-background border border-border rounded-xl p-8 flex items-start gap-5 hover:shadow-lg transition-all duration-300"
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <div className="w-14 h-14 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                    <item.icon className="w-7 h-7 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-bold text-foreground uppercase tracking-wide mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground font-body leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Diferenciais — alternating image+text */}
         <section ref={ref4} className="py-20 lg:py-28 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className={`text-center mb-16 transition-all duration-1000 ${vis4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>

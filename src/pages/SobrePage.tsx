@@ -23,7 +23,7 @@ const diferenciais = [
   {
     icon: TrendingUp,
     title: "Resultados comprovados",
-    description: "Mais de 500 projetos entregues com excelência, atendendo prazos e superando expectativas.",
+    description: "Mais de 50 projetos entregues com excelência, atendendo prazos e superando expectativas.",
   },
 ];
 
